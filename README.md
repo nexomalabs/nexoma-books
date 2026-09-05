@@ -34,17 +34,31 @@ older `/books/`-prefixed form of any printed link still lands in the right place
 
 ---
 
-## Build
+## Build and publish
 
 Python 3.9 or newer, standard library only — no dependencies, no package manager.
 
 ```bash
 python3 build.py            # build into _site/
-python3 build.py --serve    # build, then serve on http://localhost:8000
+python3 build.py --serve    # build, then preview on http://localhost:8000
 python3 check.py            # verify links, assets, alt text, and page metadata
+python3 publish.py          # copy _site/ to the repository root, which Pages serves
 ```
 
-`_site/` is generated and is not committed. CI rebuilds it on every push.
+The full loop after any content edit is:
+
+```bash
+python3 build.py && python3 check.py && python3 publish.py && git add -A && git commit
+```
+
+`_site/` is a scratch directory and is not committed. The generated pages **are**
+committed at the repository root, because GitHub Pages serves this repository from the
+`main` branch. `publish.py` only ever deletes files it wrote itself — it tracks them in
+`.publish-manifest` — and refuses to touch `build.py`, `content/`, `templates/`,
+`static/`, `tools/`, `.github/`, or `README.md`.
+
+CI runs `publish.py --check` on every push and fails if the committed pages have drifted
+from the sources, so the live site can never silently disagree with `content/`.
 
 ---
 
@@ -122,14 +136,25 @@ The Open Graph share card at `static/img/og-default.png` is generated from
 
 ## Deployment
 
-GitHub Pages, built by `.github/workflows/deploy.yml` on every push to `main`.
+GitHub Pages serves the `main` branch root. Pushing committed, published pages is the
+deployment — there is no build step on GitHub's side, and `.nojekyll` stops Jekyll from
+reprocessing the output.
 
-Pull requests build and run `check.py` but do not deploy.
+`.github/workflows/deploy.yml` does not deploy; it verifies. On every push and pull
+request it rebuilds from source, runs `check.py`, and runs `publish.py --check`.
 
-**One-time setup:** in the repository settings, set **Pages → Build and deployment →
-Source** to **GitHub Actions**, then point a `CNAME` DNS record for
-`books` at `nexomalabs.github.io`. The `CNAME` file in `static/` is copied into the build
-output and pins the custom domain.
+The custom domain is pinned by `CNAME`. DNS needs a `CNAME` record for `books` pointing
+at `nexomalabs.github.io`.
+
+### Switching to the GitHub Actions deployment source
+
+If you would rather not commit generated pages, set **Settings → Pages → Build and
+deployment → Source** to **GitHub Actions**, then replace the verify workflow with a
+deploy job that uploads `_site` via `actions/upload-pages-artifact` and
+`actions/deploy-pages`, and delete the published files from the repository root along
+with `publish.py` and `.publish-manifest`. The current arrangement was chosen because it
+needs no repository settings change and matches how `nexomalabs.github.io` is already
+run.
 
 ---
 
@@ -138,12 +163,18 @@ output and pins the custom domain.
 ```text
 build.py                  the generator — stdlib only
 check.py                  link, asset, alt-text, and metadata verification
+publish.py                copies _site/ to the repository root that Pages serves
 content/site.json         site settings, series, volumes
 content/errata.json       errata records
 templates/base.html       the page shell (head, header, footer)
 static/                   copied verbatim into the build: CSS, JS, images, CNAME
 tools/og-card.html        source for the Open Graph share image
+.publish-manifest         generated — the root files publish.py manages
 ```
+
+Everything else at the repository root — `index.html`, `404.html`, `sitemap.xml`,
+`robots.txt`, `css/`, `js/`, `img/`, `contact/`, `books/`, `prompt-engineering-series/` —
+is generated. Edit `content/`, never those files.
 
 Page bodies are composed in `build.py`, one function per page type. Adding a page means
 adding a function and one `emit(...)` call.
