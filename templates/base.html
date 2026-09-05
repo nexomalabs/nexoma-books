@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{title}}</title>
+  <meta name="description" content="{{description}}" />
+  <meta name="author" content="Nexoma Labs LLC" />
+  <meta name="robots" content="{{robots}}" />
+  <link rel="canonical" href="{{canonical}}" />
+
+  <meta property="og:site_name" content="Nexoma Books" />
+  <meta property="og:type" content="{{og_type}}" />
+  <meta property="og:title" content="{{title}}" />
+  <meta property="og:description" content="{{description}}" />
+  <meta property="og:url" content="{{canonical}}" />
+  <meta property="og:image" content="{{og_image}}" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="{{title}}" />
+  <meta name="twitter:description" content="{{description}}" />
+  <meta name="twitter:image" content="{{og_image}}" />
+
+  <link rel="icon" type="image/svg+xml" href="/img/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("nexoma-theme");
+        if (t === "light") document.documentElement.classList.add("light");
+      } catch (e) {}
+    })();
+  </script>
+  {{head_extra}}
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="/">
+        <img src="/img/nexoma-logo.png" alt="" width="28" height="28" />
+        <span><strong>NEXOMA</strong> BOOKS</span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="site-menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav id="site-menu" class="site-menu" aria-label="Primary">
+        <a href="/">Books</a>
+        <a href="/prompt-engineering-series/">Applied AI Engineering</a>
+        <a href="/prompt-engineering-series/errata/">Errata</a>
+        <a href="/prompt-engineering-series/instructors/">Instructors</a>
+        <a href="/contact/">Contact</a>
+        <a class="ext" href="https://www.nexomalabs.com" rel="noreferrer">nexomalabs.com</a>
+      </nav>
+
+      <button class="theme-toggle" type="button" aria-label="Switch colour theme" title="Switch colour theme">
+        <span class="theme-toggle-label">Light</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+{{content}}
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <p class="footer-brand"><strong>NEXOMA</strong> BOOKS</p>
+        <p class="muted small">Technical books published by Nexoma Labs LLC.</p>
+      </div>
+      <div>
+        <p class="footer-head">Series</p>
+        <ul class="plain">
+          <li><a href="/prompt-engineering-series/">Applied AI Engineering</a></li>
+          <li><a href="/prompt-engineering-series/volume-1/">Volume I — Foundations</a></li>
+          <li><a href="/prompt-engineering-series/volume-2/">Volume II — Prompt Engineering</a></li>
+          <li><a href="/prompt-engineering-series/volume-3/">Volume III — Context and Agents</a></li>
+          <li><a href="/prompt-engineering-series/volume-4/">Volume IV — Production Systems</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-head">Readers</p>
+        <ul class="plain">
+          <li><a href="/prompt-engineering-series/errata/">Errata</a></li>
+          <li><a href="/prompt-engineering-series/companion/">Companion code</a></li>
+          <li><a href="/prompt-engineering-series/instructors/">Instructor resources</a></li>
+          <li><a href="/contact/">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-head">Nexoma Labs</p>
+        <ul class="plain">
+          <li><a href="https://www.nexomalabs.com" rel="noreferrer">nexomalabs.com</a></li>
+          <li><a href="https://github.com/nexomalabs" rel="noreferrer">GitHub</a></li>
+          <li><a href="https://www.youtube.com/@NexomaLabs" rel="noreferrer">YouTube</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="wrap footer-legal">
+      <p class="muted small">
+        &copy; {{year}} Nexoma Labs LLC. Manuscript all rights reserved.
+        Companion lab code is licensed under the MIT License.
+      </p>
+    </div>
+  </footer>
+
+  <script src="/js/site.js" defer></script>
+</body>
+</html>

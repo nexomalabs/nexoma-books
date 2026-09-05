@@ -1,0 +1,282 @@
+{
+  "site": {
+    "name": "Nexoma Books",
+    "publisher": "Nexoma Labs LLC",
+    "base_url": "https://books.nexomalabs.com",
+    "tagline": "Engineering books from Nexoma Labs",
+    "description": "Technical books published by Nexoma Labs LLC — practitioner titles on AI engineering, prompt engineering, and production AI systems.",
+    "parent_site": "https://www.nexomalabs.com",
+    "github_org": "https://github.com/nexomalabs",
+    "contact_email": "contact@nexomalabs.com",
+    "publishing_email": "publishing@nexomalabs.com",
+    "errata_email": "errata@nexomalabs.com",
+    "instructor_email": "instructors@nexomalabs.com",
+    "youtube": "https://www.youtube.com/@NexomaLabs"
+  },
+  "series": [
+    {
+      "slug": "prompt-engineering-series",
+      "title": "Applied AI Engineering",
+      "tagline": "From Prompt to Production",
+      "short_description": "A four-volume practitioner series that treats AI work as an engineering discipline — from how the machinery works to running it in production.",
+      "description": [
+        "Most AI books teach either the theory of how models work or a catalogue of prompting tricks. Neither prepares you to ship and operate a system that other people depend on.",
+        "Applied AI Engineering treats AI work as an engineering discipline. A reader who finishes the series can take an ambiguous business requirement and produce a system that is designed, implemented, evaluated, secured, deployed, monitored, and maintainable — and can explain and defend every decision along the way.",
+        "The series is deliberately written to outlive individual model releases. Techniques are taught as engineering principles, with vendor-specific implementations shown as worked examples rather than as the subject matter."
+      ],
+      "author": "Dr. Ahmed AlSalih",
+      "edition": "First Edition",
+      "companion_repo": "https://github.com/nexomalabs/prompt-engineering-resources",
+      "audience": {
+        "primary": "Software engineers, AI/ML engineers, technical architects, and senior developers moving into AI system work.",
+        "secondary": "Computer science students (upper undergraduate and graduate), technical product managers, solution architects, and educators teaching applied AI.",
+        "not": "Readers looking for a prompt cookbook, and researchers looking for novel results."
+      },
+      "progression": [
+        {
+          "volume": "I",
+          "verb": "UNDERSTAND",
+          "line": "How the machinery works and what it costs"
+        },
+        {
+          "volume": "II",
+          "verb": "CONTROL",
+          "line": "Make a model do what you specify, provably"
+        },
+        {
+          "volume": "III",
+          "verb": "COMPOSE",
+          "line": "Give it context, tools, memory, and autonomy — safely"
+        },
+        {
+          "volume": "IV",
+          "verb": "OPERATE",
+          "line": "Run it in production without it hurting anyone"
+        }
+      ],
+      "methodology": {
+        "name": "The Review Loop",
+        "summary": "The series has one recurring methodology that distinguishes it from comparable books: a disciplined create / execute / evaluate / critique / improve / re-test loop, taught explicitly and applied in every volume.",
+        "rule": "The model that produces an artifact is never the model that evaluates it. Reviewers are queried independently rather than asked to role-play a committee in a single response, and disagreement between reviewers is preserved and reported, not synthesized away.",
+        "boards": [
+          {
+            "name": "Review Board",
+            "question": "Is this correct, secure, maintainable, and usable?"
+          },
+          {
+            "name": "Critique Board",
+            "question": "Is this worth building, and what is the strongest case against it?"
+          }
+        ]
+      },
+      "volumes": [
+        {
+          "number": 1,
+          "roman": "I",
+          "slug": "volume-1",
+          "title": "Foundations",
+          "subtitle": "How Modern AI Systems Actually Work",
+          "status": "in-production",
+          "status_label": "In production",
+          "status_note": "Manuscript complete and validated. Release pending final production checks.",
+          "difficulty": "Beginner to Intermediate",
+          "chapter_count": 10,
+          "lab_count": 10,
+          "cover": "",
+          "cover_3d": "",
+          "mission": "Understand how modern AI systems actually work, what they cost, where they fail, and why engineering discipline is required to use them well.",
+          "prerequisites": "Basic computer literacy. Programming experience is helpful but not required — every laboratory provides a complete starting point.",
+          "blurb": [
+            "Volume I builds the conceptual and economic foundation the rest of the series stands on. It moves from what artificial intelligence is, through machine learning, neural networks, and deep learning, into the transformer architecture and the large language models built on it.",
+            "It ends where practical work begins: a full chapter on prompt engineering foundations that explains why prompting works in terms of the underlying mechanism, not as a list of tricks."
+          ],
+          "outcomes": [
+            "Explain the evolution from symbolic AI to foundation models.",
+            "Distinguish AI, machine learning, deep learning, and generative AI precisely.",
+            "Explain the transformer architecture and why it displaced recurrent models.",
+            "Describe how an LLM turns text into tokens, and tokens into a next-token distribution.",
+            "Explain how reasoning models differ from standard LLMs, and when the extra cost is justified.",
+            "Identify the characteristic failure modes of LLMs and explain their mechanical causes.",
+            "Explain why prompt engineering works, in terms of the underlying mechanism."
+          ],
+          "chapters": [
+            "Introduction to Artificial Intelligence",
+            "History and Evolution of Artificial Intelligence",
+            "Machine Learning Fundamentals",
+            "Neural Networks",
+            "Deep Learning",
+            "Transformer Architecture",
+            "Large Language Models",
+            "Generative AI",
+            "Reasoning Models",
+            "Prompt Engineering Foundations"
+          ],
+          "formats": [
+            "Paperback",
+            "Hardcover",
+            "Kindle",
+            "EPUB",
+            "PDF"
+          ],
+          "buy_links": [],
+          "isbn_print": "",
+          "isbn_epub": "",
+          "cover_note": "Cover art pending. The artwork currently in the manuscript repository still carries the retired 'Prompt Engineering Masterclass / 5-volume' branding and must not be published here."
+        },
+        {
+          "number": 2,
+          "roman": "II",
+          "slug": "volume-2",
+          "title": "Prompt Engineering",
+          "subtitle": "Designing, Testing, and Defending AI Instructions",
+          "status": "in-development",
+          "status_label": "In development",
+          "status_note": "Chapter plan approved. Drafting in progress.",
+          "difficulty": "Intermediate to Advanced",
+          "chapter_count": 20,
+          "cover": "",
+          "mission": "Make a model do what you specify, provably — through systematic prompt design, structured outputs, evaluation, and the Review Board methodology.",
+          "prerequisites": "Volume I, or equivalent working knowledge of LLMs. Programming experience in at least one language.",
+          "blurb": [
+            "Volume II is about control. It treats a prompt as an engineered artifact with a specification, a test suite, and a regression history — not as a phrase you tune until the output looks right.",
+            "It introduces the series' signature methodology: the AI Review Board and the Critique Board, two distinct evaluation structures that answer different questions about a system you are about to ship."
+          ],
+          "chapters": [
+            "Introduction to Prompt Engineering",
+            "Prompt Anatomy",
+            "Instruction Design",
+            "Context Design",
+            "System Prompts and Persistent Instruction Files",
+            "Role Prompting",
+            "Few-Shot Learning",
+            "Structured Outputs and Schema-Constrained Generation",
+            "Output Control and Formatting",
+            "Reasoning Strategies and Thinking Budgets",
+            "Prompt Caching as a Design Constraint",
+            "Prompt Evaluation",
+            "Evaluation Harnesses and LLM-as-Judge",
+            "Prompt Testing and Regression Suites",
+            "Prompt Debugging",
+            "Prompt Optimization",
+            "The AI Review Board",
+            "The Critique Board",
+            "Patterns, Anti-Patterns, and Reusable Frameworks",
+            "Capstone Project"
+          ],
+          "formats": [
+            "Paperback",
+            "Hardcover",
+            "Kindle",
+            "EPUB",
+            "PDF"
+          ],
+          "buy_links": []
+        },
+        {
+          "number": 3,
+          "roman": "III",
+          "slug": "volume-3",
+          "title": "Context and Agents",
+          "subtitle": "Retrieval, Tools, and Autonomous Systems",
+          "status": "planned",
+          "status_label": "Planned",
+          "status_note": "Chapter plan approved. Drafting begins after Volume II.",
+          "difficulty": "Advanced",
+          "chapter_count": 24,
+          "cover": "",
+          "mission": "Give a model context, tools, memory, and autonomy — safely.",
+          "prerequisites": "Volumes I and II, or equivalent. Comfortable building and testing software.",
+          "blurb": [
+            "Volume III covers the layer where most real systems are actually built: context pipelines, retrieval, tool use, and the agent control surface.",
+            "Agents are treated as an engineering problem of control and containment rather than one of capability. Hooks, skills, subagents, tool permissions, and sandboxed execution get first-class treatment."
+          ],
+          "chapters": [
+            "Introduction to Context Engineering",
+            "Context Windows and Budgeting",
+            "Context Compaction and Long-Horizon Memory",
+            "Memory Architectures",
+            "Embeddings and Vector Databases",
+            "Retrieval-Augmented Generation",
+            "Advanced Retrieval: Hybrid Search and Reranking",
+            "Agentic RAG and Graph-Based Retrieval",
+            "Knowledge Curation and Ingestion Pipelines",
+            "Tool Calling and Function Calling",
+            "Model Context Protocol (MCP)",
+            "Skills and Progressive Disclosure",
+            "Hooks: Deterministic Control of the Agent Lifecycle",
+            "Instructions vs. Hooks vs. Skills",
+            "Sandboxed Code Execution",
+            "Computer Use and Browser Agents",
+            "AI Agents",
+            "Agent Planning",
+            "Agent Memory",
+            "Subagents and Agent Isolation",
+            "Multi-Agent Systems",
+            "Agent Communication and Interoperability",
+            "Agent Evaluation",
+            "Capstone Project"
+          ],
+          "formats": [
+            "Paperback",
+            "Hardcover",
+            "Kindle",
+            "EPUB",
+            "PDF"
+          ],
+          "buy_links": []
+        },
+        {
+          "number": 4,
+          "roman": "IV",
+          "slug": "volume-4",
+          "title": "Production Systems",
+          "subtitle": "Deploying, Securing, and Operating AI at Scale",
+          "status": "planned",
+          "status_label": "Planned",
+          "status_note": "Chapter plan approved. Drafting begins after Volume III.",
+          "difficulty": "Advanced to Professional",
+          "chapter_count": 22,
+          "cover": "",
+          "mission": "Run an AI system in production without it hurting anyone.",
+          "prerequisites": "Volumes I to III, or equivalent production engineering experience.",
+          "blurb": [
+            "Volume IV is the operations volume: deployment, inference optimization, security, observability, governance, cost, and the full lifecycle of a model in production.",
+            "Prompt injection, red-teaming, human-in-the-loop approval gates, model migration, and regulatory compliance are treated as core engineering concerns rather than appendices."
+          ],
+          "chapters": [
+            "Production AI Architecture",
+            "AI System Design",
+            "Model Deployment",
+            "Inference Optimization",
+            "Performance Engineering",
+            "Caching and Batch Strategies",
+            "Prompt Injection and Agent Security",
+            "Red-Teaming AI Systems",
+            "Privacy and Data Protection",
+            "Human-in-the-Loop and Approval Gates",
+            "Observability and Tracing",
+            "Monitoring and Alerting",
+            "Production Evaluation",
+            "Regression Testing and CI for AI Systems",
+            "Model Migration and Deprecation",
+            "Cost Optimization",
+            "Scalability",
+            "Reliability and Failure Design",
+            "AI Governance",
+            "AI Regulation and Compliance",
+            "Enterprise Workflows and Integration",
+            "Final Capstone Project"
+          ],
+          "formats": [
+            "Paperback",
+            "Hardcover",
+            "Kindle",
+            "EPUB",
+            "PDF"
+          ],
+          "buy_links": []
+        }
+      ]
+    }
+  ]
+}
