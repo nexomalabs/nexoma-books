@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Companion code — Applied AI Engineering | Nexoma Books</title>
+  <meta name="description" content="Runnable laboratories and reference solutions for Applied AI Engineering." />
+  <meta name="author" content="Nexoma Labs LLC" />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://books.nexomalabs.com/prompt-engineering-series/companion/" />
+
+  <meta property="og:site_name" content="Nexoma Books" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Companion code — Applied AI Engineering | Nexoma Books" />
+  <meta property="og:description" content="Runnable laboratories and reference solutions for Applied AI Engineering." />
+  <meta property="og:url" content="https://books.nexomalabs.com/prompt-engineering-series/companion/" />
+  <meta property="og:image" content="https://books.nexomalabs.com/img/og-default.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Companion code — Applied AI Engineering | Nexoma Books" />
+  <meta name="twitter:description" content="Runnable laboratories and reference solutions for Applied AI Engineering." />
+  <meta name="twitter:image" content="https://books.nexomalabs.com/img/og-default.png" />
+
+  <link rel="icon" type="image/svg+xml" href="/img/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("nexoma-theme");
+        if (t === "light") document.documentElement.classList.add("light");
+      } catch (e) {}
+    })();
+  </script>
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="/">
+        <img src="/img/nexoma-logo.png" alt="" width="28" height="28" />
+        <span><strong>NEXOMA</strong> BOOKS</span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="site-menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav id="site-menu" class="site-menu" aria-label="Primary">
+        <a href="/">Books</a>
+        <a href="/prompt-engineering-series/">Applied AI Engineering</a>
+        <a href="/prompt-engineering-series/errata/">Errata</a>
+        <a href="/prompt-engineering-series/instructors/">Instructors</a>
+        <a href="/contact/">Contact</a>
+        <a class="ext" href="https://www.nexomalabs.com" rel="noreferrer">nexomalabs.com</a>
+      </nav>
+
+      <button class="theme-toggle" type="button" aria-label="Switch colour theme" title="Switch colour theme">
+        <span class="theme-toggle-label">Light</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+<div class="wrap"><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Books</a><span aria-hidden="true">/</span><a href="/prompt-engineering-series/">Applied AI Engineering</a><span aria-hidden="true">/</span><span aria-current="page">Companion code</span></nav></div>
+<section class="hero wrap">
+  <p class="eyebrow">Applied AI Engineering</p>
+  <h1>Companion code</h1>
+  <p class="lead">Every laboratory in the series ships as runnable code. Each lab runs from
+  a clean checkout, pins its dependencies, and is tested in continuous integration.</p>
+  <div class="actions">
+    <a class="btn btn-primary" href="https://github.com/nexomalabs/prompt-engineering-resources" rel="noreferrer">Open the repository</a>
+    <a class="btn btn-secondary" href="https://github.com/nexomalabs" rel="noreferrer">All Nexoma repositories</a>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="grid grid-3">
+      <div class="card">
+        <h3>What is in it</h3>
+        <ul class="check">
+          <li>One directory per chapter, per volume</li>
+          <li>Datasets and shared fixtures</li>
+          <li>Reference solutions</li>
+          <li>A test suite per lab</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Requirements</h3>
+        <p class="muted small">Python 3.12. Dependencies are pinned per lab. Labs that call a
+        hosted model read the API key from the environment and never from a checked-in file.</p>
+      </div>
+      <div class="card">
+        <h3>Licence</h3>
+        <p class="muted small">Companion lab code is licensed under the MIT License. The
+        manuscript itself is all rights reserved, &copy; 2026 Nexoma Labs LLC.</p>
+      </div>
+    </div>
+
+    <h2 class="section-title" style="margin-top:2.5rem">Get started</h2>
+    <pre><code>git clone https://github.com/nexomalabs/prompt-engineering-resources.git
+cd prompt-engineering-resources
+python3 -m venv .venv &amp;&amp; source .venv/bin/activate
+pip install -r requirements.txt
+pytest</code></pre>
+    <p class="muted small">Found a problem in the code? Open an issue in the repository.
+    Problems in the printed text go to <a href="/prompt-engineering-series/errata/">errata</a> instead.</p>
+  </div>
+</section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <p class="footer-brand"><strong>NEXOMA</strong> BOOKS</p>
+        <p class="muted small">Technical books published by Nexoma Labs LLC.</p>
+      </div>
+      <div>
+        <p class="footer-head">Series</p>
+        <ul class="plain">
+          <li><a href="/prompt-engineering-series/">Applied AI Engineering</a></li>
+          <li><a href="/prompt-engineering-series/volume-1/">Volume I — Foundations</a></li>
+          <li><a href="/prompt-engineering-series/volume-2/">Volume II — Prompt Engineering</a></li>
+          <li><a href="/prompt-engineering-series/volume-3/">Volume III — Context and Agents</a></li>
+          <li><a href="/prompt-engineering-series/volume-4/">Volume IV — Production Systems</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-head">Readers</p>
+        <ul class="plain">
+          <li><a href="/prompt-engineering-series/errata/">Errata</a></li>
+          <li><a href="/prompt-engineering-series/companion/">Companion code</a></li>
+          <li><a href="/prompt-engineering-series/instructors/">Instructor resources</a></li>
+          <li><a href="/contact/">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-head">Nexoma Labs</p>
+        <ul class="plain">
+          <li><a href="https://www.nexomalabs.com" rel="noreferrer">nexomalabs.com</a></li>
+          <li><a href="https://github.com/nexomalabs" rel="noreferrer">GitHub</a></li>
+          <li><a href="https://www.youtube.com/@NexomaLabs" rel="noreferrer">YouTube</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="wrap footer-legal">
+      <p class="muted small">
+        &copy; 2026 Nexoma Labs LLC. Manuscript all rights reserved.
+        Companion lab code is licensed under the MIT License.
+      </p>
+    </div>
+  </footer>
+
+  <script src="/js/site.js" defer></script>
+</body>
+</html>

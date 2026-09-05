@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Volume II: Prompt Engineering — Applied AI Engineering | Nexoma Books</title>
+  <meta name="description" content="Designing, Testing, and Defending AI Instructions. Make a model do what you specify, provably — through systematic prompt design, structured outputs, evaluation, and the Review Board methodology." />
+  <meta name="author" content="Nexoma Labs LLC" />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://books.nexomalabs.com/prompt-engineering-series/volume-2/" />
+
+  <meta property="og:site_name" content="Nexoma Books" />
+  <meta property="og:type" content="book" />
+  <meta property="og:title" content="Volume II: Prompt Engineering — Applied AI Engineering | Nexoma Books" />
+  <meta property="og:description" content="Designing, Testing, and Defending AI Instructions. Make a model do what you specify, provably — through systematic prompt design, structured outputs, evaluation, and the Review Board methodology." />
+  <meta property="og:url" content="https://books.nexomalabs.com/prompt-engineering-series/volume-2/" />
+  <meta property="og:image" content="https://books.nexomalabs.com/img/og-default.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Volume II: Prompt Engineering — Applied AI Engineering | Nexoma Books" />
+  <meta name="twitter:description" content="Designing, Testing, and Defending AI Instructions. Make a model do what you specify, provably — through systematic prompt design, structured outputs, evaluation, and the Review Board methodology." />
+  <meta name="twitter:image" content="https://books.nexomalabs.com/img/og-default.png" />
+
+  <link rel="icon" type="image/svg+xml" href="/img/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("nexoma-theme");
+        if (t === "light") document.documentElement.classList.add("light");
+      } catch (e) {}
+    })();
+  </script>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Book",
+  "name": "Applied AI Engineering: Prompt Engineering",
+  "alternativeHeadline": "Designing, Testing, and Defending AI Instructions",
+  "bookEdition": "First Edition",
+  "inLanguage": "en-US",
+  "author": {
+    "@type": "Person",
+    "name": "Dr. Ahmed AlSalih"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Nexoma Labs LLC"
+  },
+  "isPartOf": {
+    "@type": "BookSeries",
+    "name": "Applied AI Engineering"
+  },
+  "position": 2,
+  "description": "Make a model do what you specify, provably — through systematic prompt design, structured outputs, evaluation, and the Review Board methodology.",
+  "url": "https://books.nexomalabs.com/prompt-engineering-series/volume-2/"
+}</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="/">
+        <img src="/img/nexoma-logo.png" alt="" width="28" height="28" />
+        <span><strong>NEXOMA</strong> BOOKS</span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="site-menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav id="site-menu" class="site-menu" aria-label="Primary">
+        <a href="/">Books</a>
+        <a href="/prompt-engineering-series/">Applied AI Engineering</a>
+        <a href="/prompt-engineering-series/errata/">Errata</a>
+        <a href="/prompt-engineering-series/instructors/">Instructors</a>
+        <a href="/contact/">Contact</a>
+        <a class="ext" href="https://www.nexomalabs.com" rel="noreferrer">nexomalabs.com</a>
+      </nav>
+
+      <button class="theme-toggle" type="button" aria-label="Switch colour theme" title="Switch colour theme">
+        <span class="theme-toggle-label">Light</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+<div class="wrap"><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Books</a><span aria-hidden="true">/</span><a href="/prompt-engineering-series/">Applied AI Engineering</a><span aria-hidden="true">/</span><span aria-current="page">Volume II</span></nav></div>
+<section class="hero wrap">
+  <div class="hero-split">
+    <div>
+      <p class="eyebrow">Applied AI Engineering &middot; Volume II</p>
+      <h1>Prompt Engineering</h1>
+      <p class="lead">Designing, Testing, and Defending AI Instructions</p>
+      <p style="margin-top:1rem"><span class="badge badge-in-development">In development</span> <span class="muted small">Chapter plan approved. Drafting in progress.</span></p>
+      <div class="actions"><span class="btn btn-primary" aria-disabled="true">Not yet on sale</span><a class="btn btn-secondary" href="/contact/">Get release updates</a></div>
+    </div>
+    <div><div class="cover-placeholder" role="img" aria-label="Cover art for Volume II, Prompt Engineering, is in design"><div><span class="cp-label">Volume II</span><span class="cp-title">Prompt Engineering</span><span class="cp-rule" aria-hidden="true"></span><span class="cp-note">Cover in design</span></div></div></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="hero-split">
+      <div>
+        <h2 class="section-title">About this volume</h2>
+        <p class="muted">Volume II is about control. It treats a prompt as an engineered artifact with a specification, a test suite, and a regression history — not as a phrase you tune until the output looks right.</p>
+<p class="muted">It introduces the series&#x27; signature methodology: the AI Review Board and the Critique Board, two distinct evaluation structures that answer different questions about a system you are about to ship.</p>
+        <div class="callout">
+          <p class="callout-title">Mission</p>
+          <p class="muted small">Make a model do what you specify, provably — through systematic prompt design, structured outputs, evaluation, and the Review Board methodology.</p>
+        </div>
+        <p class="muted small"><strong>Prerequisites.</strong> Volume I, or equivalent working knowledge of LLMs. Programming experience in at least one language.</p>
+      </div>
+      <div class="card">
+        <h3>Details</h3>
+        <table class="meta-table">
+<tr><th>Series</th><td>Applied AI Engineering, Volume II</td></tr>
+<tr><th>Author</th><td>Dr. Ahmed AlSalih</td></tr>
+<tr><th>Publisher</th><td>Nexoma Labs LLC</td></tr>
+<tr><th>Edition</th><td>First Edition</td></tr>
+<tr><th>Chapters</th><td>20</td></tr>
+<tr><th>Difficulty</th><td>Intermediate to Advanced</td></tr>
+<tr><th>Formats</th><td>Paperback, Hardcover, Kindle, EPUB, PDF</td></tr>
+<tr><th>Status</th><td>In development</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-line">
+  <div class="wrap">
+    <h2 class="section-title">Contents</h2>
+    <p class="section-sub">20 chapters. Chapter numbering restarts at 1 in every
+    volume; cross-volume references are written as <em>Volume III, Chapter 4</em>.</p>
+    <ol class="chapters" style="max-width:70ch">
+<li>Introduction to Prompt Engineering</li>
+<li>Prompt Anatomy</li>
+<li>Instruction Design</li>
+<li>Context Design</li>
+<li>System Prompts and Persistent Instruction Files</li>
+<li>Role Prompting</li>
+<li>Few-Shot Learning</li>
+<li>Structured Outputs and Schema-Constrained Generation</li>
+<li>Output Control and Formatting</li>
+<li>Reasoning Strategies and Thinking Budgets</li>
+<li>Prompt Caching as a Design Constraint</li>
+<li>Prompt Evaluation</li>
+<li>Evaluation Harnesses and LLM-as-Judge</li>
+<li>Prompt Testing and Regression Suites</li>
+<li>Prompt Debugging</li>
+<li>Prompt Optimization</li>
+<li>The AI Review Board</li>
+<li>The Critique Board</li>
+<li>Patterns, Anti-Patterns, and Reusable Frameworks</li>
+<li>Capstone Project</li>
+    </ol>
+  </div>
+</section>
+
+<section class="section section-line">
+  <div class="wrap">
+    <div class="grid grid-3">
+      <div class="card">
+        <h3>Errata</h3>
+        <p class="muted small">No errata reported.</p>
+        <a class="btn btn-secondary btn-sm" href="/prompt-engineering-series/errata/volume-2/">Volume II errata</a>
+      </div>
+      <div class="card">
+        <h3>Companion code</h3>
+        <p class="muted small">Every laboratory runs from a clean checkout and is tested in CI.</p>
+        <a class="btn btn-secondary btn-sm" href="/prompt-engineering-series/companion/">Companion code</a>
+      </div>
+      <div class="card">
+        <h3>Teaching this volume?</h3>
+        <p class="muted small">Slides, syllabi, teaching notes, and assessment keys are free
+        to verified instructors.</p>
+        <a class="btn btn-secondary btn-sm" href="/prompt-engineering-series/instructors/">Instructor resources</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <p class="footer-brand"><strong>NEXOMA</strong> BOOKS</p>
+        <p class="muted small">Technical books published by Nexoma Labs LLC.</p>
+      </div>
+      <div>
+        <p class="footer-head">Series</p>
+        <ul class="plain">
+          <li><a href="/prompt-engineering-series/">Applied AI Engineering</a></li>
+          <li><a href="/prompt-engineering-series/volume-1/">Volume I — Foundations</a></li>
+          <li><a href="/prompt-engineering-series/volume-2/">Volume II — Prompt Engineering</a></li>
+          <li><a href="/prompt-engineering-series/volume-3/">Volume III — Context and Agents</a></li>
+          <li><a href="/prompt-engineering-series/volume-4/">Volume IV — Production Systems</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-head">Readers</p>
+        <ul class="plain">
+          <li><a href="/prompt-engineering-series/errata/">Errata</a></li>
+          <li><a href="/prompt-engineering-series/companion/">Companion code</a></li>
+          <li><a href="/prompt-engineering-series/instructors/">Instructor resources</a></li>
+          <li><a href="/contact/">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-head">Nexoma Labs</p>
+        <ul class="plain">
+          <li><a href="https://www.nexomalabs.com" rel="noreferrer">nexomalabs.com</a></li>
+          <li><a href="https://github.com/nexomalabs" rel="noreferrer">GitHub</a></li>
+          <li><a href="https://www.youtube.com/@NexomaLabs" rel="noreferrer">YouTube</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="wrap footer-legal">
+      <p class="muted small">
+        &copy; 2026 Nexoma Labs LLC. Manuscript all rights reserved.
+        Companion lab code is licensed under the MIT License.
+      </p>
+    </div>
+  </footer>
+
+  <script src="/js/site.js" defer></script>
+</body>
+</html>
