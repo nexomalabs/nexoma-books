@@ -1,0 +1,50 @@
+{
+  "_comment": "Errata for every published Nexoma book. To record a correction, add an entry to the matching volume's 'entries' array and bump 'last_reviewed'. Entries render newest-first in the order they appear here. 'printings' lists which printings/editions are affected.",
+
+  "last_reviewed": "2026-09-05",
+
+  "policy": [
+    "Every reported error is verified against the manuscript source before it is listed here.",
+    "Corrections are folded into the next printing and into the current EPUB and PDF as soon as they are confirmed.",
+    "Errors in the companion lab code are tracked as issues in the companion repository, not on this page."
+  ],
+
+  "books": [
+    {
+      "series": "prompt-engineering-series",
+      "volume": "volume-1",
+      "last_reviewed": "2026-09-05",
+      "entries": []
+    },
+    {
+      "series": "prompt-engineering-series",
+      "volume": "volume-2",
+      "last_reviewed": "2026-09-05",
+      "entries": []
+    },
+    {
+      "series": "prompt-engineering-series",
+      "volume": "volume-3",
+      "last_reviewed": "2026-09-05",
+      "entries": []
+    },
+    {
+      "series": "prompt-engineering-series",
+      "volume": "volume-4",
+      "last_reviewed": "2026-09-05",
+      "entries": []
+    }
+  ],
+
+  "_example_entry": {
+    "id": "V1-001",
+    "severity": "error",
+    "location": "Chapter 7, page 214, second paragraph",
+    "printings": "1st printing",
+    "reported": "2026-08-01",
+    "corrected": "2026-08-14",
+    "incorrect": "The text as printed.",
+    "correct": "The text as it should read.",
+    "note": "Optional explanation of why the correction matters."
+  }
+}
