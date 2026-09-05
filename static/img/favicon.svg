@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Nexoma Labs favicon">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#27d3a2" />
+      <stop offset="100%" stop-color="#f29f67" />
+    </linearGradient>
+  </defs>
+  <rect x="8" y="8" width="112" height="112" rx="26" fill="#0e1117" />
+  <path d="M30 96V32h13l25 35V32h15v64H70L45 60v36H30Z" fill="url(#g)" />
+</svg>
