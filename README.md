@@ -24,13 +24,11 @@ a page that can be linked from a retailer listing.
 Every public URL ends in a slash, because that is the form printed in the books.
 
 `/books/prompt-engineering-series/…` is also served here as a set of redirect stubs, so the
-older `/books/`-prefixed form of any printed link still lands in the right place.
+older `/books/`-prefixed form of any link still lands in the right place.
 
-> **Redirect still required on the main site.** The books print
-> `www.nexomalabs.com/books/prompt-engineering-series/` and
-> `www.nexomalabs.com/books/prompt-engineering-series/errata`. Those paths live on the
-> `www` host, not here. Add a redirect from `www.nexomalabs.com/books/*` to
-> `books.nexomalabs.com/*` in the `nexomalabs.github.io` repository before Volume I ships.
+The books themselves print the subdomain form directly — the manuscript repository was
+normalised to `books.nexomalabs.com/prompt-engineering-series/` and its `errata/` path — so
+no redirect from `www.nexomalabs.com` is required.
 
 ---
 
