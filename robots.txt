@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://books.nexomalabs.com/sitemap.xml

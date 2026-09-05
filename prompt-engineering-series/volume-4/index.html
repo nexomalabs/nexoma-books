@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Volume IV: Production Systems — Applied AI Engineering | Nexoma Books</title>
+  <meta name="description" content="Deploying, Securing, and Operating AI at Scale. Run an AI system in production without it hurting anyone." />
+  <meta name="author" content="Nexoma Labs LLC" />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://books.nexomalabs.com/prompt-engineering-series/volume-4/" />
+
+  <meta property="og:site_name" content="Nexoma Books" />
+  <meta property="og:type" content="book" />
+  <meta property="og:title" content="Volume IV: Production Systems — Applied AI Engineering | Nexoma Books" />
+  <meta property="og:description" content="Deploying, Securing, and Operating AI at Scale. Run an AI system in production without it hurting anyone." />
+  <meta property="og:url" content="https://books.nexomalabs.com/prompt-engineering-series/volume-4/" />
+  <meta property="og:image" content="https://books.nexomalabs.com/img/og-default.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Volume IV: Production Systems — Applied AI Engineering | Nexoma Books" />
+  <meta name="twitter:description" content="Deploying, Securing, and Operating AI at Scale. Run an AI system in production without it hurting anyone." />
+  <meta name="twitter:image" content="https://books.nexomalabs.com/img/og-default.png" />
+
+  <link rel="icon" type="image/svg+xml" href="/img/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("nexoma-theme");
+        if (t === "light") document.documentElement.classList.add("light");
+      } catch (e) {}
+    })();
+  </script>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Book",
+  "name": "Applied AI Engineering: Production Systems",
+  "alternativeHeadline": "Deploying, Securing, and Operating AI at Scale",
+  "bookEdition": "First Edition",
+  "inLanguage": "en-US",
+  "author": {
+    "@type": "Person",
+    "name": "Dr. Ahmed AlSalih"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Nexoma Labs LLC"
+  },
+  "isPartOf": {
+    "@type": "BookSeries",
+    "name": "Applied AI Engineering"
+  },
+  "position": 4,
+  "description": "Run an AI system in production without it hurting anyone.",
+  "url": "https://books.nexomalabs.com/prompt-engineering-series/volume-4/"
+}</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="/">
+        <img src="/img/nexoma-logo.png" alt="" width="28" height="28" />
+        <span><strong>NEXOMA</strong> BOOKS</span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="site-menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav id="site-menu" class="site-menu" aria-label="Primary">
+        <a href="/">Books</a>
+        <a href="/prompt-engineering-series/">Applied AI Engineering</a>
+        <a href="/prompt-engineering-series/errata/">Errata</a>
+        <a href="/prompt-engineering-series/instructors/">Instructors</a>
+        <a href="/contact/">Contact</a>
+        <a class="ext" href="https://www.nexomalabs.com" rel="noreferrer">nexomalabs.com</a>
+      </nav>
+
+      <button class="theme-toggle" type="button" aria-label="Switch colour theme" title="Switch colour theme">
+        <span class="theme-toggle-label">Light</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+<div class="wrap"><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Books</a><span aria-hidden="true">/</span><a href="/prompt-engineering-series/">Applied AI Engineering</a><span aria-hidden="true">/</span><span aria-current="page">Volume IV</span></nav></div>
+<section class="hero wrap">
+  <div class="hero-split">
+    <div>
+      <p class="eyebrow">Applied AI Engineering &middot; Volume IV</p>
+      <h1>Production Systems</h1>
+      <p class="lead">Deploying, Securing, and Operating AI at Scale</p>
+      <p style="margin-top:1rem"><span class="badge badge-planned">Planned</span> <span class="muted small">Chapter plan approved. Drafting begins after Volume III.</span></p>
+      <div class="actions"><span class="btn btn-primary" aria-disabled="true">Not yet on sale</span><a class="btn btn-secondary" href="/contact/">Get release updates</a></div>
+    </div>
+    <div><div class="cover-placeholder" role="img" aria-label="Cover art for Volume IV, Production Systems, is in design"><div><span class="cp-label">Volume IV</span><span class="cp-title">Production Systems</span><span class="cp-rule" aria-hidden="true"></span><span class="cp-note">Cover in design</span></div></div></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="hero-split">
+      <div>
+        <h2 class="section-title">About this volume</h2>
+        <p class="muted">Volume IV is the operations volume: deployment, inference optimization, security, observability, governance, cost, and the full lifecycle of a model in production.</p>
+<p class="muted">Prompt injection, red-teaming, human-in-the-loop approval gates, model migration, and regulatory compliance are treated as core engineering concerns rather than appendices.</p>
+        <div class="callout">
+          <p class="callout-title">Mission</p>
+          <p class="muted small">Run an AI system in production without it hurting anyone.</p>
+        </div>
+        <p class="muted small"><strong>Prerequisites.</strong> Volumes I to III, or equivalent production engineering experience.</p>
+      </div>
+      <div class="card">
+        <h3>Details</h3>
+        <table class="meta-table">
+<tr><th>Series</th><td>Applied AI Engineering, Volume IV</td></tr>
+<tr><th>Author</th><td>Dr. Ahmed AlSalih</td></tr>
+<tr><th>Publisher</th><td>Nexoma Labs LLC</td></tr>
+<tr><th>Edition</th><td>First Edition</td></tr>
+<tr><th>Chapters</th><td>22</td></tr>
+<tr><th>Difficulty</th><td>Advanced to Professional</td></tr>
+<tr><th>Formats</th><td>Paperback, Hardcover, Kindle, EPUB, PDF</td></tr>
+<tr><th>Status</th><td>Planned</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-line">
+  <div class="wrap">
+    <h2 class="section-title">Contents</h2>
+    <p class="section-sub">22 chapters. Chapter numbering restarts at 1 in every
+    volume; cross-volume references are written as <em>Volume III, Chapter 4</em>.</p>
+    <ol class="chapters" style="max-width:70ch">
+<li>Production AI Architecture</li>
+<li>AI System Design</li>
+<li>Model Deployment</li>
+<li>Inference Optimization</li>
+<li>Performance Engineering</li>
+<li>Caching and Batch Strategies</li>
+<li>Prompt Injection and Agent Security</li>
+<li>Red-Teaming AI Systems</li>
+<li>Privacy and Data Protection</li>
+<li>Human-in-the-Loop and Approval Gates</li>
+<li>Observability and Tracing</li>
+<li>Monitoring and Alerting</li>
+<li>Production Evaluation</li>
+<li>Regression Testing and CI for AI Systems</li>
+<li>Model Migration and Deprecation</li>
+<li>Cost Optimization</li>
+<li>Scalability</li>
+<li>Reliability and Failure Design</li>
+<li>AI Governance</li>
+<li>AI Regulation and Compliance</li>
+<li>Enterprise Workflows and Integration</li>
+<li>Final Capstone Project</li>
+    </ol>
+  </div>
+</section>
+
+<section class="section section-line">
+  <div class="wrap">
+    <div class="grid grid-3">
+      <div class="card">
+        <h3>Errata</h3>
+        <p class="muted small">No errata reported.</p>
+        <a class="btn btn-secondary btn-sm" href="/prompt-engineering-series/errata/volume-4/">Volume IV errata</a>
+      </div>
+      <div class="card">
+        <h3>Companion code</h3>
+        <p class="muted small">Every laboratory runs from a clean checkout and is tested in CI.</p>
+        <a class="btn btn-secondary btn-sm" href="/prompt-engineering-series/companion/">Companion code</a>
+      </div>
+      <div class="card">
+        <h3>Teaching this volume?</h3>
+        <p class="muted small">Slides, syllabi, teaching notes, and assessment keys are free
+        to verified instructors.</p>
+        <a class="btn btn-secondary btn-sm" href="/prompt-engineering-series/instructors/">Instructor resources</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <p class="footer-brand"><strong>NEXOMA</strong> BOOKS</p>
+        <p class="muted small">Technical books published by Nexoma Labs LLC.</p>
+      </div>
+      <div>
+        <p class="footer-head">Series</p>
+        <ul class="plain">
+          <li><a href="/prompt-engineering-series/">Applied AI Engineering</a></li>
+          <li><a href="/prompt-engineering-series/volume-1/">Volume I — Foundations</a></li>
+          <li><a href="/prompt-engineering-series/volume-2/">Volume II — Prompt Engineering</a></li>
+          <li><a href="/prompt-engineering-series/volume-3/">Volume III — Context and Agents</a></li>
+          <li><a href="/prompt-engineering-series/volume-4/">Volume IV — Production Systems</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-head">Readers</p>
+        <ul class="plain">
+          <li><a href="/prompt-engineering-series/errata/">Errata</a></li>
+          <li><a href="/prompt-engineering-series/companion/">Companion code</a></li>
+          <li><a href="/prompt-engineering-series/instructors/">Instructor resources</a></li>
+          <li><a href="/contact/">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-head">Nexoma Labs</p>
+        <ul class="plain">
+          <li><a href="https://www.nexomalabs.com" rel="noreferrer">nexomalabs.com</a></li>
+          <li><a href="https://github.com/nexomalabs" rel="noreferrer">GitHub</a></li>
+          <li><a href="https://www.youtube.com/@NexomaLabs" rel="noreferrer">YouTube</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="wrap footer-legal">
+      <p class="muted small">
+        &copy; 2026 Nexoma Labs LLC. Manuscript all rights reserved.
+        Companion lab code is licensed under the MIT License.
+      </p>
+    </div>
+  </footer>
+
+  <script src="/js/site.js" defer></script>
+</body>
+</html>
