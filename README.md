@@ -13,22 +13,24 @@ a page that can be linked from a retailer listing.
 | URL | Page |
 |-----|------|
 | `/` | All Nexoma books |
-| `/prompt-engineering-series/` | *Applied AI Engineering* — series overview |
-| `/prompt-engineering-series/volume-1/` … `volume-4/` | One page per volume |
-| `/prompt-engineering-series/errata/` | Errata index, all volumes |
-| `/prompt-engineering-series/errata/volume-1/` … `volume-4/` | Errata per volume |
-| `/prompt-engineering-series/companion/` | Companion lab code |
-| `/prompt-engineering-series/instructors/` | Instructor resources |
+| `/applied-ai-engineering/` | *Applied AI Engineering* — series overview |
+| `/applied-ai-engineering/volume-1/` … `volume-4/` | One page per volume |
+| `/applied-ai-engineering/errata/` | Errata index, all volumes |
+| `/applied-ai-engineering/errata/volume-1/` … `volume-4/` | Errata per volume |
+| `/applied-ai-engineering/companion/` | Companion lab code |
+| `/applied-ai-engineering/instructors/` | Instructor resources |
 | `/contact/` | Contact routes |
 
 Every public URL ends in a slash, because that is the form printed in the books.
 
-`/books/prompt-engineering-series/…` is also served here as a set of redirect stubs, so the
-older `/books/`-prefixed form of any link still lands in the right place.
+The series lived at `/prompt-engineering-series/` before it was renamed. Every page under
+that path, and under the older `/books/prompt-engineering-series/` form, is still served here
+as a redirect stub to its `/applied-ai-engineering/` equivalent, so links already printed or
+shared keep landing in the right place. Former slugs are listed in `former_slugs` in
+`content/site.json`.
 
-The books themselves print the subdomain form directly — the manuscript repository was
-normalised to `books.nexomalabs.com/prompt-engineering-series/` and its `errata/` path — so
-no redirect from `www.nexomalabs.com` is required.
+The manuscript should print `books.nexomalabs.com/applied-ai-engineering/` and its `errata/`
+path from now on.
 
 ---
 
@@ -171,7 +173,8 @@ tools/og-card.html        source for the Open Graph share image
 ```
 
 Everything else at the repository root — `index.html`, `404.html`, `sitemap.xml`,
-`robots.txt`, `css/`, `js/`, `img/`, `contact/`, `books/`, `prompt-engineering-series/` —
+`robots.txt`, `css/`, `js/`, `img/`, `contact/`, `books/`, `applied-ai-engineering/`,
+`prompt-engineering-series/` —
 is generated. Edit `content/`, never those files.
 
 Page bodies are composed in `build.py`, one function per page type. Adding a page means

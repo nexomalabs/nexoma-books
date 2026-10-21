@@ -33,7 +33,7 @@ def built_files():
     for base, _, files in os.walk(SITE):
         for name in files:
             full = os.path.join(base, name)
-            out.append(os.path.relpath(full, SITE))
+            out.append(os.path.relpath(full, SITE).replace(os.sep, "/"))
     return sorted(out)
 
 
@@ -90,11 +90,11 @@ def publish(check_only=False):
             if not os.listdir(base):
                 os.rmdir(base)
 
-        with open(MANIFEST, "w", encoding="utf-8") as fh:
+        with open(MANIFEST, "w", encoding="utf-8", newline="\n") as fh:
             fh.write("# Written by publish.py. Files it manages at the repository "
                      "root; do not edit by hand.\n")
             for rel in files:
-                fh.write(rel.replace(os.sep, "/") + "\n")
+                fh.write(rel + "\n")
 
     if check_only:
         if stale:
