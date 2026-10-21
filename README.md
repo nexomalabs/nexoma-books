@@ -23,12 +23,6 @@ a page that can be linked from a retailer listing.
 
 Every public URL ends in a slash, because that is the form printed in the books.
 
-The series lived at `/prompt-engineering-series/` before it was renamed. Every page under
-that path, and under the older `/books/prompt-engineering-series/` form, is still served here
-as a redirect stub to its `/applied-ai-engineering/` equivalent, so links already printed or
-shared keep landing in the right place. Former slugs are listed in `former_slugs` in
-`content/site.json`.
-
 The manuscript should print `books.nexomalabs.com/applied-ai-engineering/` and its `errata/`
 path from now on.
 
@@ -173,8 +167,7 @@ tools/og-card.html        source for the Open Graph share image
 ```
 
 Everything else at the repository root — `index.html`, `404.html`, `sitemap.xml`,
-`robots.txt`, `css/`, `js/`, `img/`, `contact/`, `books/`, `applied-ai-engineering/`,
-`prompt-engineering-series/` —
+`robots.txt`, `css/`, `js/`, `img/`, `contact/`, `applied-ai-engineering/` —
 is generated. Edit `content/`, never those files.
 
 Page bodies are composed in `build.py`, one function per page type. Adding a page means
