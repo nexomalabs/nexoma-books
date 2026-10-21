@@ -846,28 +846,6 @@ def page_404(site, series):
     return content, ""
 
 
-def redirect_page(site, target, title):
-    """A meta-refresh + canonical redirect stub for legacy printed URLs."""
-    url = target if target.startswith("http") else site["base_url"].rstrip("/") + target
-    return """<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>{title}</title>
-<link rel="canonical" href="{url}" />
-<meta name="robots" content="noindex,follow" />
-<meta http-equiv="refresh" content="0; url={target}" />
-<script>location.replace("{target}");</script>
-<style>body{{font-family:system-ui,sans-serif;background:#050816;color:#fff;display:grid;place-items:center;min-height:100vh;margin:0;text-align:center;padding:2rem}}a{{color:#3b82f6}}</style>
-</head>
-<body>
-<p>This page has moved.<br /><a href="{target}">Continue to {url}</a></p>
-</body>
-</html>
-""".format(title=e(title), url=e(url), target=e(target))
-
-
 # --------------------------------------------------------------------------
 # sitemap / robots
 # --------------------------------------------------------------------------
@@ -996,21 +974,6 @@ def build(out):
                         description="That page could not be found.", path="/404.html",
                         content=content, robots="noindex,follow")
     write_page(out, "404.html", page, in_sitemap=False)
-
-    # --- legacy URLs: the /books/ prefix (www.nexomalabs.com/books/...) and any
-    # former series slug. Each is a redirect stub to the current page.
-    subpaths = [("", series["title"]), ("errata/", "Errata"),
-                ("companion/", "Companion code"), ("instructors/", "Instructor resources")]
-    for vol in series["volumes"]:
-        subpaths.append(("%s/" % vol["slug"], "Volume %s" % vol["roman"]))
-        subpaths.append(("errata/%s/" % vol["slug"], "Volume %s errata" % vol["roman"]))
-    write_page(out, "/books/", redirect_page(site, "/", "Nexoma Books"), in_sitemap=False)
-    for old in series.get("former_slugs", []):
-        for prefix in ("/%s/" % old, "/books/%s/" % old):
-            for sub, title in subpaths:
-                write_page(out, prefix + sub,
-                           redirect_page(site, "/%s/%s" % (slug, sub), title),
-                           in_sitemap=False)
 
     write_sitemap(out, site)
 

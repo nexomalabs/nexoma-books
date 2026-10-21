@@ -16,7 +16,6 @@
   "series": [
     {
       "slug": "applied-ai-engineering",
-      "former_slugs": ["prompt-engineering-series"],
       "title": "Applied AI Engineering",
       "tagline": "From Prompt to Production",
       "short_description": "A four-volume practitioner series that treats AI work as an engineering discipline — from how the machinery works to running it in production.",
