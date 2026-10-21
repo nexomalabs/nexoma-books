@@ -52,7 +52,7 @@ def main():
                 if not ALT.search(tag):
                     problems.append("%s -> <img> without alt: %s" % (rel, tag[:70]))
 
-            if "/books/" in rel:
+            if 'http-equiv="refresh"' in text:
                 continue  # redirect stubs are intentionally minimal
             for needle, label in (("<title>", "title"),
                                   ('name="description"', "meta description"),

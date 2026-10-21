@@ -59,7 +59,7 @@ def write_page(out, url_path, html_text, changefreq="monthly", priority="0.6",
     else:
         dest = os.path.join(out, rel, "index.html") if rel else os.path.join(out, "index.html")
     os.makedirs(os.path.dirname(dest), exist_ok=True)
-    with open(dest, "w", encoding="utf-8") as fh:
+    with open(dest, "w", encoding="utf-8", newline="\n") as fh:
         fh.write(html_text)
     if in_sitemap:
         _pages.append(("/" + rel + "/" if rel and not os.path.splitext(rel)[1] else "/" + rel,
@@ -883,11 +883,11 @@ def write_sitemap(out, site):
     xml = ('<?xml version="1.0" encoding="UTF-8"?>\n'
            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
            + "\n".join(urls) + "\n</urlset>\n")
-    with open(os.path.join(out, "sitemap.xml"), "w", encoding="utf-8") as fh:
+    with open(os.path.join(out, "sitemap.xml"), "w", encoding="utf-8", newline="\n") as fh:
         fh.write(xml)
 
     robots = ("User-agent: *\nAllow: /\n\nSitemap: %s/sitemap.xml\n" % base)
-    with open(os.path.join(out, "robots.txt"), "w", encoding="utf-8") as fh:
+    with open(os.path.join(out, "robots.txt"), "w", encoding="utf-8", newline="\n") as fh:
         fh.write(robots)
 
 
@@ -997,20 +997,20 @@ def build(out):
                         content=content, robots="noindex,follow")
     write_page(out, "404.html", page, in_sitemap=False)
 
-    # --- legacy printed URLs (www.nexomalabs.com/books/prompt-engineering-series/...)
-    # Mirrored here so a /books/* path on this host also resolves.
-    for src, dst, title in [
-        ("/books/", "/", "Nexoma Books"),
-        ("/books/%s/" % slug, "/%s/" % slug, series["title"]),
-        ("/books/%s/errata/" % slug, "/%s/errata/" % slug, "Errata"),
-        ("/books/%s/errata" % slug, "/%s/errata/" % slug, "Errata"),
-    ]:
-        write_page(out, src, redirect_page(site, dst, title), in_sitemap=False)
+    # --- legacy URLs: the /books/ prefix (www.nexomalabs.com/books/...) and any
+    # former series slug. Each is a redirect stub to the current page.
+    subpaths = [("", series["title"]), ("errata/", "Errata"),
+                ("companion/", "Companion code"), ("instructors/", "Instructor resources")]
     for vol in series["volumes"]:
-        write_page(out, "/books/%s/%s/" % (slug, vol["slug"]),
-                   redirect_page(site, "/%s/%s/" % (slug, vol["slug"]),
-                                 "Volume %s" % vol["roman"]),
-                   in_sitemap=False)
+        subpaths.append(("%s/" % vol["slug"], "Volume %s" % vol["roman"]))
+        subpaths.append(("errata/%s/" % vol["slug"], "Volume %s errata" % vol["roman"]))
+    write_page(out, "/books/", redirect_page(site, "/", "Nexoma Books"), in_sitemap=False)
+    for old in series.get("former_slugs", []):
+        for prefix in ("/%s/" % old, "/books/%s/" % old):
+            for sub, title in subpaths:
+                write_page(out, prefix + sub,
+                           redirect_page(site, "/%s/%s" % (slug, sub), title),
+                           in_sitemap=False)
 
     write_sitemap(out, site)
 
