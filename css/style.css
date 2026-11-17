@@ -222,6 +222,7 @@ a:hover { text-decoration: underline; }
 }
 .vol-card:hover { border-color: var(--accent); transform: translateY(-2px); }
 .vol-card h3 { margin: 0; }
+.vol-card .vol-cover { display: block; width: 100%; height: auto; border-radius: 4px; border: 1px solid var(--line); margin-bottom: 0.4rem; }
 .vol-card .vol-num {
   font-family: "Space Grotesk", sans-serif;
   font-size: 0.75rem;

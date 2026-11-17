@@ -136,7 +136,13 @@ def cover_block(vol, series_slug):
 
 def volume_card(series, vol):
     href = "/%s/%s/" % (series["slug"], vol["slug"])
+    thumb = ""
+    if vol.get("cover"):
+        thumb = ('<img class="vol-cover" src="%s" alt="Front cover of %s, Volume %s: %s" '
+                 'width="300" height="480" loading="lazy" />'
+                 % (e(vol["cover"]), e(series["title"]), e(vol["roman"]), e(vol["title"])))
     return """<a class="vol-card" href="{href}">
+  {thumb}
   <span class="vol-num">Volume {roman}</span>
   <h3>{title}</h3>
   <p class="vol-sub">{subtitle}</p>
@@ -144,9 +150,9 @@ def volume_card(series, vol):
     <span>{chapters} chapters</span>
     {badge}
   </div>
-</a>""".format(href=e(href), roman=e(vol["roman"]), title=e(vol["title"]),
-                subtitle=e(vol["subtitle"]), chapters=e(vol["chapter_count"]),
-                badge=status_badge(vol))
+</a>""".format(href=e(href), thumb=thumb, roman=e(vol["roman"]), title=e(vol["title"]),
+                subtitle=e(vol.get("short_subtitle") or vol["subtitle"]),
+                chapters=e(vol["chapter_count"]), badge=status_badge(vol))
 
 
 def buy_actions(vol, site):
@@ -485,8 +491,9 @@ def page_volume(site, series, vol, errata_for_volume):
     book_ld = {
         "@context": "https://schema.org",
         "@type": "Book",
-        "name": "%s: %s" % (series["title"], vol["title"]),
+        "name": vol["title"],
         "alternativeHeadline": vol["subtitle"],
+        "image": (site["base_url"].rstrip("/") + vol["cover"]) if vol.get("cover") else None,
         "bookEdition": series["edition"],
         "numberOfPages": None,
         "inLanguage": "en-US",

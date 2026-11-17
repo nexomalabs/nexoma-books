@@ -111,7 +111,7 @@ state, since the errata URL is printed in the book and must resolve from day one
 
 ## Cover art
 
-Volume I currently renders a placeholder. The artwork in the manuscript repository
+Volume covers are generated in the manuscript repository by `scripts/make_print_cover.py --all`; copy each volume's `assets/cover/web/cover-front-600.png` to `static/img/covers/volume-N.png`. The artwork in the manuscript repository
 (`volumes/volume-1/assets/cover/`) still carries the retired *"Prompt Engineering
 Masterclass — The Complete 5-Volume Reference"* branding, which contradicts the current
 four-volume *Applied AI Engineering* series identity, so it is deliberately not published

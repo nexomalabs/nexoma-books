@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Volume III: Context and Agents — Applied AI Engineering | Nexoma Books</title>
-  <meta name="description" content="Retrieval, Tools, and Autonomous Systems. Give a model context, tools, memory, and autonomy — safely." />
+  <meta name="description" content="How AI Systems Retrieve, Remember, and Act: RAG, Memory, Tools, MCP, and Multi-Agent Systems, with Hands-On Labs. Give a model context, tools, memory, and autonomy — safely." />
   <meta name="author" content="Nexoma Labs LLC" />
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://books.nexomalabs.com/applied-ai-engineering/volume-3/" />
@@ -12,13 +12,13 @@
   <meta property="og:site_name" content="Nexoma Books" />
   <meta property="og:type" content="book" />
   <meta property="og:title" content="Volume III: Context and Agents — Applied AI Engineering | Nexoma Books" />
-  <meta property="og:description" content="Retrieval, Tools, and Autonomous Systems. Give a model context, tools, memory, and autonomy — safely." />
+  <meta property="og:description" content="How AI Systems Retrieve, Remember, and Act: RAG, Memory, Tools, MCP, and Multi-Agent Systems, with Hands-On Labs. Give a model context, tools, memory, and autonomy — safely." />
   <meta property="og:url" content="https://books.nexomalabs.com/applied-ai-engineering/volume-3/" />
-  <meta property="og:image" content="https://books.nexomalabs.com/img/og-default.png" />
+  <meta property="og:image" content="https://books.nexomalabs.com/img/covers/volume-3.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Volume III: Context and Agents — Applied AI Engineering | Nexoma Books" />
-  <meta name="twitter:description" content="Retrieval, Tools, and Autonomous Systems. Give a model context, tools, memory, and autonomy — safely." />
-  <meta name="twitter:image" content="https://books.nexomalabs.com/img/og-default.png" />
+  <meta name="twitter:description" content="How AI Systems Retrieve, Remember, and Act: RAG, Memory, Tools, MCP, and Multi-Agent Systems, with Hands-On Labs. Give a model context, tools, memory, and autonomy — safely." />
+  <meta name="twitter:image" content="https://books.nexomalabs.com/img/covers/volume-3.png" />
 
   <link rel="icon" type="image/svg+xml" href="/img/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -36,8 +36,9 @@
   <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "Book",
-  "name": "Applied AI Engineering: Context and Agents",
-  "alternativeHeadline": "Retrieval, Tools, and Autonomous Systems",
+  "name": "Context and Agents",
+  "alternativeHeadline": "How AI Systems Retrieve, Remember, and Act: RAG, Memory, Tools, MCP, and Multi-Agent Systems, with Hands-On Labs",
+  "image": "https://books.nexomalabs.com/img/covers/volume-3.png",
   "bookEdition": "First Edition",
   "inLanguage": "en-US",
   "author": {
@@ -93,11 +94,11 @@
     <div>
       <p class="eyebrow">Applied AI Engineering &middot; Volume III</p>
       <h1>Context and Agents</h1>
-      <p class="lead">Retrieval, Tools, and Autonomous Systems</p>
-      <p style="margin-top:1rem"><span class="badge badge-planned">Planned</span> <span class="muted small">Chapter plan approved. Drafting begins after Volume II.</span></p>
+      <p class="lead">How AI Systems Retrieve, Remember, and Act: RAG, Memory, Tools, MCP, and Multi-Agent Systems, with Hands-On Labs</p>
+      <p style="margin-top:1rem"><span class="badge badge-in-production">In production</span> <span class="muted small">Manuscript complete. Paperback and Kindle editions are being prepared for release.</span></p>
       <div class="actions"><span class="btn btn-primary" aria-disabled="true">Not yet on sale</span><a class="btn btn-secondary" href="/contact/">Get release updates</a></div>
     </div>
-    <div><div class="cover-placeholder" role="img" aria-label="Cover art for Volume III, Context and Agents, is in design"><div><span class="cp-label">Volume III</span><span class="cp-title">Context and Agents</span><span class="cp-rule" aria-hidden="true"></span><span class="cp-note">Cover in design</span></div></div></div>
+    <div><div class="cover-frame"><img src="/img/covers/volume-3.png" alt="Front cover of Applied AI Engineering, Volume III: Context and Agents" loading="lazy" /></div></div>
   </div>
 </section>
 
@@ -112,7 +113,7 @@
           <p class="callout-title">Mission</p>
           <p class="muted small">Give a model context, tools, memory, and autonomy — safely.</p>
         </div>
-        <p class="muted small"><strong>Prerequisites.</strong> Volumes I and II, or equivalent. Comfortable building and testing software.</p>
+        <p class="muted small"><strong>Prerequisites.</strong> Python, the language model vocabulary of Volume I, and the prompt design and evaluation practice of Volume II.</p>
       </div>
       <div class="card">
         <h3>Details</h3>
@@ -121,10 +122,11 @@
 <tr><th>Author</th><td>Dr. Ahmed AlSalih</td></tr>
 <tr><th>Publisher</th><td>Nexoma Labs LLC</td></tr>
 <tr><th>Edition</th><td>First Edition</td></tr>
-<tr><th>Chapters</th><td>24</td></tr>
+<tr><th>Chapters</th><td>19</td></tr>
+<tr><th>Laboratories</th><td>19</td></tr>
 <tr><th>Difficulty</th><td>Advanced</td></tr>
 <tr><th>Formats</th><td>Paperback, Hardcover, Kindle, EPUB, PDF</td></tr>
-<tr><th>Status</th><td>Planned</td></tr>
+<tr><th>Status</th><td>In production</td></tr>
         </table>
       </div>
     </div>
@@ -133,34 +135,43 @@
 
 <section class="section section-line">
   <div class="wrap">
+    <h2 class="section-title">What you will be able to do</h2>
+    <ul class="check" style="max-width:70ch">
+<li>Budget and compress context, and explain the lost-in-the-middle problem.</li>
+<li>Design episodic, semantic, and procedural memory for assistants and agents.</li>
+<li>Build retrieval-augmented generation end to end, from chunking to grounded answers.</li>
+<li>Use embeddings and vector search, including hybrid retrieval with BM25 and reciprocal rank fusion.</li>
+<li>Expose tools through strict JSON schemas, function calling, and the Model Context Protocol.</li>
+<li>Build agents that plan, remember, and cooperate in multi-agent systems.</li>
+<li>Evaluate agents, and defend them against prompt injection, memory poisoning, and data leakage.</li>
+    </ul>
+  </div>
+</section>
+<section class="section section-line">
+  <div class="wrap">
     <h2 class="section-title">Contents</h2>
-    <p class="section-sub">24 chapters. Chapter numbering restarts at 1 in every
+    <p class="section-sub">19 chapters. Chapter numbering restarts at 1 in every
     volume; cross-volume references are written as <em>Volume III, Chapter 4</em>.</p>
     <ol class="chapters" style="max-width:70ch">
 <li>Introduction to Context Engineering</li>
-<li>Context Windows and Budgeting</li>
-<li>Context Compaction and Long-Horizon Memory</li>
+<li>Context Windows</li>
 <li>Memory Architectures</li>
+<li>Retrieval-Augmented Generation (RAG)</li>
 <li>Embeddings and Vector Databases</li>
-<li>Retrieval-Augmented Generation</li>
-<li>Advanced Retrieval: Hybrid Search and Reranking</li>
-<li>Agentic RAG and Graph-Based Retrieval</li>
-<li>Knowledge Curation and Ingestion Pipelines</li>
-<li>Tool Calling and Function Calling</li>
+<li>Knowledge Retrieval</li>
+<li>Context Compression</li>
+<li>Tool Calling</li>
+<li>Function Calling</li>
 <li>Model Context Protocol (MCP)</li>
-<li>Skills and Progressive Disclosure</li>
-<li>Hooks: Deterministic Control of the Agent Lifecycle</li>
-<li>Instructions vs. Hooks vs. Skills</li>
-<li>Sandboxed Code Execution</li>
-<li>Computer Use and Browser Agents</li>
 <li>AI Agents</li>
 <li>Agent Planning</li>
 <li>Agent Memory</li>
-<li>Subagents and Agent Isolation</li>
 <li>Multi-Agent Systems</li>
-<li>Agent Communication and Interoperability</li>
+<li>Agent Communication</li>
+<li>Workflow Automation</li>
 <li>Agent Evaluation</li>
-<li>Capstone Project</li>
+<li>Agent Security</li>
+<li>Capstone: Intelligent AI Assistant</li>
     </ol>
   </div>
 </section>
