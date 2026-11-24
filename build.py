@@ -866,13 +866,16 @@ def page_404(site, series):
 # --------------------------------------------------------------------------
 
 def write_sitemap(out, site):
+    # No <lastmod>: the build date would stamp every page as changed on every build, and it
+    # differs between a local build and CI on another calendar day, which fails
+    # `publish.py --check`.
     base = site["base_url"].rstrip("/")
     urls = []
     for path, changefreq, priority in _pages:
         urls.append(
-            "  <url>\n    <loc>%s%s</loc>\n    <lastmod>%s</lastmod>\n"
+            "  <url>\n    <loc>%s%s</loc>\n"
             "    <changefreq>%s</changefreq>\n    <priority>%s</priority>\n  </url>"
-            % (base, path, TODAY, changefreq, priority))
+            % (base, path, changefreq, priority))
     xml = ('<?xml version="1.0" encoding="UTF-8"?>\n'
            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
            + "\n".join(urls) + "\n</urlset>\n")
