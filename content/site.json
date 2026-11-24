@@ -26,6 +26,7 @@
       ],
       "author": "Dr. Ahmed AlSalih",
       "edition": "First Edition",
+      "copyright_year": 2027,
       "companion_repo": "https://github.com/nexomalabs/ai-engineering-resources",
       "audience": {
         "primary": "Software engineers, AI/ML engineers, technical architects, and senior developers moving into AI system work.",

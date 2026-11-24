@@ -677,7 +677,8 @@ def page_companion(site, series):
   <p class="eyebrow">{series_title}</p>
   <h1>Companion code</h1>
   <p class="lead">Every laboratory in the series ships as runnable code. Each lab runs from
-  a clean checkout, pins its dependencies, and is tested in continuous integration.</p>
+  a clean checkout, declares its own Python version and dependencies, and is tested in
+  continuous integration.</p>
   <div class="actions">
     <a class="btn btn-primary" href="{repo}" rel="noreferrer">Open the repository</a>
     <a class="btn btn-secondary" href="{org}" rel="noreferrer">All Nexoma repositories</a>
@@ -698,8 +699,10 @@ def page_companion(site, series):
       </div>
       <div class="card">
         <h3>Requirements</h3>
-        <p class="muted small">Python 3.12. Dependencies are pinned per lab. Labs that call a
-        hosted model read the API key from the environment and never from a checked-in file.</p>
+        <p class="muted small">Git, VS Code and uv. You don't install Python yourself: uv
+        downloads the right version for each lab. No API key is needed; labs that call a model
+        replay recorded answers or use a stand-in. To run one live, the key is read from the
+        environment, never from a checked-in file.</p>
       </div>
       <div class="card">
         <h3>Licence</h3>
@@ -709,18 +712,23 @@ def page_companion(site, series):
     </div>
 
     <h2 class="section-title" style="margin-top:2.5rem">Get started</h2>
+    <p class="muted small">Install Git, VS Code and uv once; the repository's README has the
+    commands for Windows and macOS. On Windows, clone into a short folder such as
+    <code>C:\\labs</code>: long paths can break package installs. Then run a first lab:</p>
     <pre><code>git clone {repo}.git
-cd {repo_name}
-python3 -m venv .venv &amp;&amp; source .venv/bin/activate
-pip install -r requirements.txt
-pytest</code></pre>
+cd {repo_name}/volume-1/chapter-03
+uv sync
+uv run pytest
+uv run python src/lab.py</code></pre>
+    <p class="muted small">If the tests pass, your setup works. Every lab runs the same way;
+    its README says which file to run.</p>
     <p class="muted small">Found a problem in the code? Open an issue in the repository.
     Problems in the printed text go to <a href="/{slug}/errata/">errata</a> instead.</p>
   </div>
 </section>
 """.format(series_title=e(series["title"]), repo=e(series["companion_repo"]),
            repo_name=e(series["companion_repo"].rstrip("/").rsplit("/", 1)[-1]),
-           org=e(site["github_org"]), year=YEAR, slug=e(series["slug"]))
+           org=e(site["github_org"]), year=series["copyright_year"], slug=e(series["slug"]))
     return content, ""
 
 

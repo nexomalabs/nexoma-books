@@ -70,7 +70,8 @@
   <p class="eyebrow">Applied AI Engineering</p>
   <h1>Companion code</h1>
   <p class="lead">Every laboratory in the series ships as runnable code. Each lab runs from
-  a clean checkout, pins its dependencies, and is tested in continuous integration.</p>
+  a clean checkout, declares its own Python version and dependencies, and is tested in
+  continuous integration.</p>
   <div class="actions">
     <a class="btn btn-primary" href="https://github.com/nexomalabs/ai-engineering-resources" rel="noreferrer">Open the repository</a>
     <a class="btn btn-secondary" href="https://github.com/nexomalabs" rel="noreferrer">All Nexoma repositories</a>
@@ -91,22 +92,29 @@
       </div>
       <div class="card">
         <h3>Requirements</h3>
-        <p class="muted small">Python 3.12. Dependencies are pinned per lab. Labs that call a
-        hosted model read the API key from the environment and never from a checked-in file.</p>
+        <p class="muted small">Git, VS Code and uv. You don't install Python yourself: uv
+        downloads the right version for each lab. No API key is needed; labs that call a model
+        replay recorded answers or use a stand-in. To run one live, the key is read from the
+        environment, never from a checked-in file.</p>
       </div>
       <div class="card">
         <h3>Licence</h3>
         <p class="muted small">Companion lab code is licensed under the MIT License. The
-        manuscript itself is all rights reserved, &copy; 2026 Nexoma Labs LLC.</p>
+        manuscript itself is all rights reserved, &copy; 2027 Nexoma Labs LLC.</p>
       </div>
     </div>
 
     <h2 class="section-title" style="margin-top:2.5rem">Get started</h2>
+    <p class="muted small">Install Git, VS Code and uv once; the repository's README has the
+    commands for Windows and macOS. On Windows, clone into a short folder such as
+    <code>C:\labs</code>: long paths can break package installs. Then run a first lab:</p>
     <pre><code>git clone https://github.com/nexomalabs/ai-engineering-resources.git
-cd ai-engineering-resources
-python3 -m venv .venv &amp;&amp; source .venv/bin/activate
-pip install -r requirements.txt
-pytest</code></pre>
+cd ai-engineering-resources/volume-1/chapter-03
+uv sync
+uv run pytest
+uv run python src/lab.py</code></pre>
+    <p class="muted small">If the tests pass, your setup works. Every lab runs the same way;
+    its README says which file to run.</p>
     <p class="muted small">Found a problem in the code? Open an issue in the repository.
     Problems in the printed text go to <a href="/applied-ai-engineering/errata/">errata</a> instead.</p>
   </div>
@@ -124,7 +132,7 @@ pytest</code></pre>
         <p class="footer-head">Series</p>
         <ul class="plain">
           <li><a href="/applied-ai-engineering/">Applied AI Engineering</a></li>
-          <li><a href="/applied-ai-engineering/volume-1/">Volume I — Foundations</a></li>
+          <li><a href="/applied-ai-engineering/volume-1/">Volume I — AI and LLM Fundamentals</a></li>
           <li><a href="/applied-ai-engineering/volume-2/">Volume II — Prompt Engineering</a></li>
           <li><a href="/applied-ai-engineering/volume-3/">Volume III — Context and Agents</a></li>
           <li><a href="/applied-ai-engineering/volume-4/">Volume IV — Production Systems</a></li>
